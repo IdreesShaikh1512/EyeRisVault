@@ -1,0 +1,135 @@
+╔══════════════════════════════════════════════════════════════╗
+║            HOW TO RUN IRISVAULT - SIMPLE GUIDE              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📌 OPTION 1: EASIEST WAY (Double-click batch files)
+──────────────────────────────────────────────────────────────
+
+1. Make sure MongoDB is running
+   (Check Windows Services or run: mongod)
+
+2. Double-click: start_both.bat
+   - This starts both backend and frontend automatically!
+
+3. Wait for browsers to open at:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8000/docs
+
+──────────────────────────────────────────────────────────────
+
+
+📌 OPTION 2: MANUAL WAY (Using Command Prompt)
+──────────────────────────────────────────────────────────────
+
+STEP 1: Start Backend (Open Command Prompt #1)
+──────────────────────────────────────────────
+
+   cd "C:\Users\IDREES SHAIKH\Downloads\IrisVault-main\IrisVault-main\backend"
+   
+   REM Activate virtual environment
+   venv\Scripts\activate
+   
+   REM Install dependencies (first time only)
+   pip install -r requirements.txt
+   
+   REM Start backend server
+   uvicorn server:app --reload --host 0.0.0.0 --port 8000
+
+   ✅ Backend runs at: http://localhost:8000
+
+
+STEP 2: Start Frontend (Open Command Prompt #2)
+──────────────────────────────────────────────
+
+   cd "C:\Users\IDREES SHAIKH\Downloads\IrisVault-main\IrisVault-main\frontend"
+   
+   REM Install dependencies (first time only)
+   npm install
+   
+   REM Start frontend server
+   npm start
+
+   ✅ Frontend runs at: http://localhost:3000
+
+
+STEP 3: Open Browser
+──────────────────────────────────────────────
+
+   Open: http://localhost:3000
+
+
+──────────────────────────────────────────────────────────────
+
+
+📌 OPTION 3: Using PowerShell
+──────────────────────────────────────────────────────────────
+
+Backend (PowerShell #1):
+────────────────────────
+   cd "IrisVault-main\backend"
+   .\venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   uvicorn server:app --reload --host 0.0.0.0 --port 8000
+
+Frontend (PowerShell #2):
+────────────────────────
+   cd "IrisVault-main\frontend"
+   npm install
+   npm start
+
+
+──────────────────────────────────────────────────────────────
+
+
+🔧 TROUBLESHOOTING
+──────────────────────────────────────────────────────────────
+
+❌ "MongoDB connection failed"
+   → Start MongoDB first:
+     - Check Windows Services for MongoDB
+     - Or run: mongod
+
+❌ "Module not found" error
+   → Install dependencies:
+     cd backend
+     venv\Scripts\activate
+     pip install -r requirements.txt
+
+❌ "Port already in use"
+   → Change port:
+     uvicorn server:app --reload --port 8001
+
+❌ Camera not working
+   → Make sure you're on localhost or https
+   → Grant camera permissions in browser
+
+❌ Frontend can't connect
+   → Make sure backend is running first
+   → Check both terminals for errors
+
+
+──────────────────────────────────────────────────────────────
+
+
+✅ SUCCESS CHECKLIST
+──────────────────────────────────────────────────────────────
+
+[ ] MongoDB is running
+[ ] Backend server running (http://localhost:8000)
+[ ] Frontend server running (http://localhost:3000)
+[ ] Browser opens automatically or go to http://localhost:3000
+[ ] Camera permissions granted
+
+
+──────────────────────────────────────────────────────────────
+
+
+📚 MORE HELP
+──────────────────────────────────────────────────────────────
+
+- README.md - Full documentation
+- START_HERE.md - Detailed step-by-step guide
+- SETUP_STEPS.md - Setup instructions
+
+──────────────────────────────────────────────────────────────
+
